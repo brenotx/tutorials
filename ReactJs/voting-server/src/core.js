@@ -39,17 +39,30 @@ function getWinners(vote) {
     } else {
         return [a, b];
     }
-
 }
 
 /**
  * https://facebook.github.io/immutable-js/docs/#/Map/get
+ * https://facebook.github.io/immutable-js/docs/#/Map/concat
+ * https://facebook.github.io/immutable-js/docs/#/Map/delete
+ * https://facebook.github.io/immutable-js/docs/#/Map/set
+ * https://facebook.github.io/immutable-js/docs/#/Map/first
+ * https://facebook.github.io/immutable-js/docs/#/Map/size
  * https://facebook.github.io/immutable-js/docs/#/Map/merge
+ * https://facebook.github.io/immutable-js/docs/#/Map/take
+ * https://facebook.github.io/immutable-js/docs/#/Map/skip
  */
 export function next(state) {
     const entries = state.get('entries').concat(getWinners(state.get('vote')));
-    return state.merge({
-        vote: Map({pair: entries.take(2)}),
-        entries: entries.skip(2)
-    });
+
+    if (entries.size === 1) {
+        return state.delete('vote')
+                    .delete('entries')
+                    .set('winner', entries.first());
+    } else {
+        return state.merge({
+            vote: Map({pair: entries.take(2)}),
+            entries: entries.skip(2)
+        });
+    }
 }
