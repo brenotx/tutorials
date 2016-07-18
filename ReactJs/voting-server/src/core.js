@@ -1,6 +1,8 @@
 /*jshint esversion: 6 */
 import {List, Map} from 'immutable';
 
+export const INITIAL_STATE = Map();
+
 /**
  * https://facebook.github.io/immutable-js/docs/#/Map/set
  */
