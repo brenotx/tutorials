@@ -1,4 +1,5 @@
 /*jshint esversion: 6 */
+import {List, Map} from 'immutable';
 import {expect} from 'chai';
 
 describe('immutability', () => {
@@ -19,7 +20,7 @@ describe('immutability', () => {
 
   });
 
-  describe('A List', () => {
+  describe('Lists', () => {
 
     function addMovie(currentState, movie) {
       return currentState.push(movie);
@@ -36,7 +37,7 @@ describe('immutability', () => {
       ));
       expect(state).to.equal(List.of(
         'Trainspotting',
-        '28 Days Later  '
+        '28 Days Later'
       ));
     });
 
