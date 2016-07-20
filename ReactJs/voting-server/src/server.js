@@ -1,6 +1,6 @@
-// /*jshint esversion: 6 */
-// import Server from 'socket.io';
+/*jshint esversion: 6 */
+import Server from 'socket.io';
 
-// export default function startServer() {
-//     const io = new Server().attach(8090);
-// }
+export default function startServer() {
+    const io = new Server().attach(8090);
+}
