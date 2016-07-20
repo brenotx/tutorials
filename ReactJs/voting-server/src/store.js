@@ -1,7 +1,10 @@
-// /*jshint esversion: 6 */
-// import {createStore} from 'redux';
-// import reducer from './reducer';
+/*jshint esversion: 6 */
+import {createStore} from 'redux';
+import reducer from './reducer';
 
-// export default function makeStore() {
-//   return createStore(reducer);
-// }
+/**
+* A Reduz Store is initialized with a reducer function
+*/
+export default function makeStore() {
+  return createStore(reducer);
+}
