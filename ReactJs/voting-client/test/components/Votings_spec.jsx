@@ -14,7 +14,7 @@ describe('Voting', () => {
 
     it('renders a pair of buttons', () => {
         const component = renderIntoDocument(
-            <Voting pair={["Trainspotting", "28 Days Later"]} />
+            <Voting pair={['Trainspotting', '28 Days Later']} />
         );
         const buttons = scryRenderedDOMComponentsWithTag(component, 'button');
 
