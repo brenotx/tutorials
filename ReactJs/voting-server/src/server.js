@@ -1,7 +1,7 @@
 /*jshint esversion: 6 */
 import Server from 'socket.io';
 
-export default function startServer(store) {
+export function startServer(store) {
     const io = new Server().attach(8090);
 
     store.subscribe(
